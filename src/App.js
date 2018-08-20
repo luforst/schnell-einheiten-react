@@ -1,0 +1,170 @@
+import React, { Component } from 'react';
+import MathJax from 'react-mathjax';
+import logo from './logo.svg';
+import './App.css';
+//import './contentdb.js';
+
+var contentdb = [
+		["Zeit", "t", "1 s \\, \\textrm{(Sekunde)}"],
+		["Masse", "m", "1 kg \\, \\textrm{(Kilogramm)}"],
+		["Länge, Strecke", "l, s", "1 m \\, \\textrm{(Meter)}"],
+		["el. Stromstärke", "I", "1 A \\, \\textrm{(Ampere)}"],
+		["absolute Temperatur", "T", "1 K \\, \\textrm{(Kelvin)}"],
+		["Stoffmenge", "n", "1 \\, mol"],
+		["Lichtstärke", "I_{V}", "1 \\, cd \\, \\textrm{(Candela)}"],
+		["Lichtgeschwindigkeit", "c_{0}", "299.792.458 \\frac{m}{s} \\approx 300.000 \\frac{km}{s}"],
+		];
+
+//var data = ["Dichte", `\\varrho`, `1 \\frac{kg}{m^3}`];
+
+function getRandom(min, max) { // Snippet von developer.mozilla.org
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min +1)) + min; 
+}
+
+function changeContentDB() {
+  console.log("changeContentDB has been invoked");
+  console.warn("changeContentDB ist ohne Funktion!");
+}
+
+class MathJaxWert extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {hideWert: false};
+    this.toggleVisible = this.toggleVisible.bind(this);
+  }
+
+  toggleVisible(e) {
+    this.setState({hideWert: !this.hideWert ? true : false});
+  }
+
+  render() {
+
+    const style = this.state.hideWert ? {display: 'none'} : {};
+
+    return (
+      <td style={style}>
+        <MathJax.Provider>
+          <MathJax.Node formula={this.props.inhalt} />
+        </MathJax.Provider>
+      </td>
+    );
+  }
+}
+
+class TextWert extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {hideWert: false};
+    this.toggleVisible = this.toggleVisible.bind(this);
+  }
+
+  toggleVisible(e) {
+    this.setState({hideWert: !this.hideWert ? true : false});
+  }
+
+  render() {
+    return (
+      <td>{this.props.inhalt}</td>
+    );
+  }
+}
+
+class Titel extends Component {
+  render() {
+    return (
+      <th>{this.props.name}</th>
+    );
+  }
+}
+
+class Abfragetabelle extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+                   showGroesse: false,
+                   showFZ: false,
+                   showEinheit: false
+    };
+  }
+
+  render() {
+    return (
+      <table style={{width: "100%"}}>
+        <thead>
+          <tr><Titel name="Größe" /><Titel name="Formelzeichen" /><Titel name="Einheit / Wert" /></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <TextWert inhalt={this.props.data[0]} showMe={this.state.showGroesse} />
+            <MathJaxWert inhalt={this.props.data[1]} showMe={this.state.showFZ} />
+            <MathJaxWert inhalt={this.props.data[2]} showMe={this.state.showEinheit} />
+          </tr>
+        </tbody>
+      </table>
+    );
+  }
+}
+
+class TopicInput extends Component {
+  render() {
+    return (
+      <form id="themenbereich">
+	<fieldset>
+		<legend>Themenbereiche auswählen</legend>
+		<Checkbox name="basicSI" description="SI-Basiseinheiten" />
+                <Checkbox name="optics" description="Optik" />
+	</fieldset>
+      </form>
+    );
+  }
+}
+
+class Checkbox extends Component {
+  render() {
+    return (
+      <div className="Checkbox">
+        <input type="checkbox" id={this.props.name} name="branch" value={this.props.name} onChange={changeContentDB()} />
+        <label htmlFor={this.props.name}>{this.props.description}</label>
+      </div>
+    );
+  }
+}
+
+class RefreshButton extends Component {
+  render() {
+    return (
+      <button className="RefreshButton" onClick={this.props.handleClick}>neue Inhalte laden</button>
+    );
+  }
+}
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {currentData: [], topics: []};
+    this.refreshData = this.refreshData.bind(this);
+  }
+
+  refreshData() {
+    console.log("refreshData invoked");
+    var randIndex = getRandom(0, contentdb.length-1);
+    this.setState({currentData: (contentdb[randIndex])});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        <Abfragetabelle data={this.state.currentData}/>
+        <RefreshButton handleClick={this.refreshData} />
+        <TopicInput />
+      </div>
+    );
+  }
+}
+//<button className="RefreshButton" handleClick={this.refreshData}>neue Inhalte laden</button>
+export default App;

@@ -1,0 +1,67 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 20%;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+button {
+	text-align: center;
+	font-weight: normal;
+	border: 1px solid;
+	padding: 20px;
+	float: left;
+	display: inline-block;
+}
+
+.RefreshButton {
+  margin-top: 25px;
+  background-color: white;
+  border-color: #008CBA;
+  display: block;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.RefreshButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #008CBA;
+  color: white;
+}
+
+td {
+	padding: 10px;
+	text-align: center;
+}
+
+th {
+	padding: 20px;
+	text-align: center;
+}
+
+#themenbereich {
+  float: right;
+  text-align: left;
+}

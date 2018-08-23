@@ -1,4 +1,4 @@
-export default const basicSI = [
+export const basicSI = [
 		["Zeit", "t", "1 s \\, \\textrm{(Sekunde)}"],
 		["Masse", "m", "1 kg \\, \\textrm{(Kilogramm)}"],
 		["Länge, Strecke", "l, s", "1 m \\, \\textrm{(Meter)}"],
@@ -9,7 +9,7 @@ export default const basicSI = [
 		["Lichtgeschwindigkeit", "c<sub>0</sub>", "299.792.458 \\frac{m}{s} \\approx 300.000 \\frac{km}{s}"],
 		];
 
-export default const thermodyn = [
+export const thermodyn = [
 		["absolute Temperatur", "T", "1 K \\, \\textrm{(Kelvin)}"],
 		["Celsius-Temperatur", "&theta;, &#977;", "1 °C \\, \\textrm{(Grad Celsius)}"],
 		["Leistung, Energiestrom", "P", "1 \\frac{J}{s} = 1 V \\cdot A = 1 W \\textrm{(Watt)}"],
@@ -20,7 +20,7 @@ export default const thermodyn = [
 		["Wirkungsgrad", "&eta;", "1 = 100% \\, \\textrm{(dimensionslose Dezimalzahl < 1)"]
 		];
 
-export default const mechanics = [
+export const mechanics = [
 		["Geschwindigkeit", "v", "1 \\frac{m}{s}"],
 		["Impuls", "\\vec{p}", "\\frac{kg \\cdot m}{s}"],
 		["Kraft", "F", "1 N \\, \\textrm{(Newton)}"],
@@ -32,7 +32,7 @@ export default const mechanics = [
 		["Reibungskoeffizient", "&mu;", "1 \\, \\textrm{(dimensionslose Dezimalzahl)}"]
 		];
 
-export default const electrics = [
+export const electrics = [
 		["el. Stromstärke", "I", "1 A \\, \\textrm{(Ampere)}"],
 		["el. Widerstand", "R", "1 \\Omega \\, \\textrm{(Ohm)}"],
 		["el. Spannung", "U", "1 V \\, \\textrm{(Volt)}"],
@@ -41,7 +41,7 @@ export default const electrics = [
 		["Lorentzkraft", "F<sub>L</sub>", "1 N \\, \\textrm{(Newton)}"]
 		];
 
-export default const nuclear = [
+export const nuclear = [
 		["Aktivität", "A", "1 Bq \\, \\textrm{(Becquerel)}"],
 		["Energiedosis", "D", "1 Gy \\, \\textrm{(Gray)}"],
 		["Äquivalentdosis", "H", "1 Sv \\, \\textrm{(Sievert)}"],
@@ -51,12 +51,12 @@ export default const nuclear = [
 		["Nukleonenzahl, Massenzahl", "A", "1 \\, \\textrm{dimensionslose Anzahl}"]
 		];
 
-export default const acoustics = [
+export const acoustics = [
 		["Frequenz", "f", "\\frac{1}{s} = 1 Hz \\, \\textrm{(Hertz)}"]
 		["Schalldruckpegel", "L<sub>p</sub>", "1 dB \\, \\textrm{(Dezibel)} = 0,1 B \\, \\textrm{(Bel)}"]
 		];
 
-export default const optics = [
+export const optics = [
 		["Brennweite", "f", "1 m"],
 		["Brechwert, Brechkraft", "D", "\\frac{1}{m} = 1 dpt \\, \\textrm{(Dioptrie)}"],
 		["Bildgröße", "B", "1 m"],

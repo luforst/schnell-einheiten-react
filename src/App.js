@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MathJax from 'react-mathjax';
 import logo from './logo.svg';
 import './App.css';
-//import './contentdb.js';
+import './contentdb.js';
 
 var contentdb = [
 		["Zeit", "t", "1 s \\, \\textrm{(Sekunde)}"],
@@ -23,10 +23,6 @@ function getRandom(min, max) { // Snippet von developer.mozilla.org
 	return Math.floor(Math.random() * (max - min +1)) + min; 
 }
 
-function changeContentDB() {
-  console.log("changeContentDB has been invoked");
-  console.warn("changeContentDB ist ohne Funktion!");
-}
 
 class MathJaxWert extends Component {
   constructor(props) {
@@ -113,8 +109,8 @@ class TopicInput extends Component {
       <form id="themenbereich">
 	<fieldset>
 		<legend>Themenbereiche auswählen</legend>
-		<Checkbox name="basicSI" description="SI-Basiseinheiten" />
-                <Checkbox name="optics" description="Optik" />
+		<Checkbox name="basicSI" description="SI-Basiseinheiten" handleChange={this.props.handleChange} />
+                <Checkbox name="optics" description="Optik" handleChange={this.props.handleChange} />
 	</fieldset>
       </form>
     );
@@ -125,7 +121,7 @@ class Checkbox extends Component {
   render() {
     return (
       <div className="Checkbox">
-        <input type="checkbox" id={this.props.name} name="branch" value={this.props.name} onChange={changeContentDB()} />
+        <input type="checkbox" id={this.props.name} name="branch" value={this.props.name} onChange={this.props.handleChange} />
         <label htmlFor={this.props.name}>{this.props.description}</label>
       </div>
     );
@@ -145,12 +141,17 @@ class App extends Component {
     super();
     this.state = {currentData: [], topics: []};
     this.refreshData = this.refreshData.bind(this);
+    this.chooseTopics = this.chooseTopics.bind(this);
   }
 
   refreshData() {
     console.log("refreshData invoked");
     var randIndex = getRandom(0, contentdb.length-1);
     this.setState({currentData: (contentdb[randIndex])});
+  }
+
+  chooseTopics() {
+    console.log("Chosen topics changed");
   }
 
   render() {
@@ -161,7 +162,7 @@ class App extends Component {
         </header>
         <Abfragetabelle data={this.state.currentData}/>
         <RefreshButton handleClick={this.refreshData} />
-        <TopicInput />
+        <TopicInput handleChange={this.chooseTopics} />
       </div>
     );
   }

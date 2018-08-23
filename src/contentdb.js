@@ -52,7 +52,7 @@ export const nuclear = [
 		];
 
 export const acoustics = [
-		["Frequenz", "f", "\\frac{1}{s} = 1 Hz \\, \\textrm{(Hertz)}"]
+		["Frequenz", "f", "\\frac{1}{s} = 1 Hz \\, \\textrm{(Hertz)}"],
 		["Schalldruckpegel", "L<sub>p</sub>", "1 dB \\, \\textrm{(Dezibel)} = 0,1 B \\, \\textrm{(Bel)}"]
 		];
 

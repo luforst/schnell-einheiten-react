@@ -49,6 +49,7 @@ class MathJaxWert extends Component {
   }
 }
 
+
 class TextWert extends Component {
   constructor(props) {
     super(props);
@@ -66,6 +67,7 @@ class TextWert extends Component {
     );
   }
 }
+
 
 class Titel extends Component {
   render() {
@@ -103,6 +105,7 @@ class Abfragetabelle extends Component {
   }
 }
 
+
 class TopicInput extends Component {
   render() {
     return (
@@ -117,6 +120,7 @@ class TopicInput extends Component {
   }
 }
 
+
 class Checkbox extends Component {
   render() {
     return (
@@ -128,6 +132,7 @@ class Checkbox extends Component {
   }
 }
 
+
 class RefreshButton extends Component {
   render() {
     return (
@@ -135,6 +140,7 @@ class RefreshButton extends Component {
     );
   }
 }
+
 
 class App extends Component {
   constructor() {
@@ -167,5 +173,5 @@ class App extends Component {
     );
   }
 }
-//<button className="RefreshButton" handleClick={this.refreshData}>neue Inhalte laden</button>
+
 export default App;

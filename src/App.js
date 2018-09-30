@@ -15,7 +15,6 @@ var contentdb = [
 		["Lichtgeschwindigkeit", "c_{0}", "299.792.458 \\frac{m}{s} \\approx 300.000 \\frac{km}{s}"],
 		];
 
-//var data = ["Dichte", `\\varrho`, `1 \\frac{kg}{m^3}`];
 
 function getRandom(min, max) { // Snippet von developer.mozilla.org
 	min = Math.ceil(min);

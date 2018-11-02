@@ -2,18 +2,7 @@ import React, { Component } from 'react';
 import MathJax from 'react-mathjax';
 import logo from './logo.svg';
 import './App.css';
-import './contentdb.js';
-
-var contentdb = [
-		["Zeit", "t", "1 s \\, \\textrm{(Sekunde)}"],
-		["Masse", "m", "1 kg \\, \\textrm{(Kilogramm)}"],
-		["Länge, Strecke", "l, s", "1 m \\, \\textrm{(Meter)}"],
-		["el. Stromstärke", "I", "1 A \\, \\textrm{(Ampere)}"],
-		["absolute Temperatur", "T", "1 K \\, \\textrm{(Kelvin)}"],
-		["Stoffmenge", "n", "1 \\, mol"],
-		["Lichtstärke", "I_{V}", "1 \\, cd \\, \\textrm{(Candela)}"],
-		["Lichtgeschwindigkeit", "c_{0}", "299.792.458 \\frac{m}{s} \\approx 300.000 \\frac{km}{s}"],
-		];
+import { contentdb } from './contentdb.js';
 
 
 function getRandom(min, max) { // Snippet von developer.mozilla.org

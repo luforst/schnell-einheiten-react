@@ -94,7 +94,7 @@ class Abfragetabelle extends Component {
 }
 
 
-class TopicInput extends Component {
+class TopicChooser extends Component {
   render() {
     return (
       <form id="themenbereich">
@@ -145,6 +145,7 @@ class App extends Component {
   }
 
   chooseTopics() {
+/* will be called by TopicChooser */
     console.log("Chosen topics changed");
   }
 
@@ -156,7 +157,6 @@ class App extends Component {
         </header>
         <Abfragetabelle data={this.state.currentData}/>
         <RefreshButton handleClick={this.refreshData} />
-        <TopicInput handleChange={this.chooseTopics} />
       </div>
     );
   }

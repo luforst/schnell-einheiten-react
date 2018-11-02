@@ -18,7 +18,7 @@ const contentdb = [
 		["Arbeit", "\\Delta E, \\, W", "1 J \\, \\textrm{(Joule)}"],
 		["Wirkungsgrad", "&eta;", "1 = 100% \\, \\textrm{(dimensionslose Dezimalzahl < 1)"],
 	/* Mechanik */
-		["Geschwindigkeit", "v", "1 \\frac{m}{s}"],
+		["Geschwindigkeit", "\\vec{v}", "1 \\frac{m}{s}"],
 		["Impuls", "\\vec{p}", "\\frac{kg \\cdot m}{s}"],
 		["Kraft", "\\vec{F}", "1 N \\, \\textrm{(Newton)}"],
 		["Erd- / Fallbeschleunigung", "g", "9,81\\frac{m}{s^2} = 9,81 \\frac{N}{kg}"],

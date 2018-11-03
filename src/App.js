@@ -6,9 +6,9 @@ import { contentdb } from './contentdb.js';
 
 
 function getRandom(min, max) { // Snippet von developer.mozilla.org
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min +1)) + min; 
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min +1)) + min; 
 }
 
 
@@ -24,7 +24,6 @@ class MathJaxWert extends Component {
   }
 
   render() {
-
     const style = this.state.hideWert ? {display: 'none'} : {};
 
     return (
@@ -69,9 +68,9 @@ class Abfragetabelle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-                   showGroesse: false,
-                   showFZ: false,
-                   showEinheit: false
+      showGroesse: false,
+      showFZ: false,
+      showEinheit: false
     };
   }
 
@@ -99,9 +98,9 @@ class TopicChooser extends Component {
     return (
       <form id="themenbereich">
 	<fieldset>
-		<legend>Themenbereiche auswählen</legend>
-		<Checkbox name="basicSI" description="SI-Basiseinheiten" handleChange={this.props.handleChange} />
-                <Checkbox name="optics" description="Optik" handleChange={this.props.handleChange} />
+	  <legend>Themenbereiche auswählen</legend>
+	  <Checkbox name="basicSI" description="SI-Basiseinheiten" handleChange={this.props.handleChange} />
+          <Checkbox name="optics" description="Optik" handleChange={this.props.handleChange} />
 	</fieldset>
       </form>
     );

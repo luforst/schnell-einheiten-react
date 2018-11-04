@@ -65,16 +65,7 @@ class Titel extends Component {
 }
 
 class Abfragetabelle extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showGroesse: false,
-      showFZ: false,
-      showEinheit: false
-    };
-  }
-
-  render() {
+ render() {
     return (
       <table style={{width: "100%"}}>
         <thead>
@@ -132,7 +123,13 @@ class RefreshButton extends Component {
 class App extends Component {
   constructor() {
     super();
-    this.state = {currentData: [], topics: []};
+    this.state = {
+      currentData: [],
+      topics: [],
+      showGroesse: false,
+      showFZ: false,
+      showEinheit: false
+    };
     this.refreshData = this.refreshData.bind(this);
     this.chooseTopics = this.chooseTopics.bind(this);
   }

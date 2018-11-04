@@ -73,9 +73,9 @@ class Abfragetabelle extends Component {
         </thead>
         <tbody>
           <tr>
-            <TextWert inhalt={this.props.data[0]} showMe={this.state.showGroesse} />
-            <MathJaxWert inhalt={this.props.data[1]} showMe={this.state.showFZ} />
-            <MathJaxWert inhalt={this.props.data[2]} showMe={this.state.showEinheit} />
+            <TextWert inhalt={this.props.data[0]} showMe={this.props.contentVisibility.showGroesse} />
+            <MathJaxWert inhalt={this.props.data[1]} showMe={this.props.contentVisibility.showFZ} />
+            <MathJaxWert inhalt={this.props.data[2]} showMe={this.props.contentVisibility.showEinheit} />
           </tr>
         </tbody>
       </table>
@@ -126,9 +126,11 @@ class App extends Component {
     this.state = {
       currentData: [],
       topics: [],
-      showGroesse: false,
-      showFZ: false,
-      showEinheit: false
+      contentVisibility: {
+        showGroesse: false,
+        showFZ: false,
+        showEinheit: false
+      }
     };
     this.refreshData = this.refreshData.bind(this);
     this.chooseTopics = this.chooseTopics.bind(this);
@@ -151,7 +153,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <Abfragetabelle data={this.state.currentData}/>
+        <Abfragetabelle data={this.state.currentData} contentVisibility={this.state.contentVisibility} />
         <RefreshButton handleClick={this.refreshData} />
       </div>
     );
